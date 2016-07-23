@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="cache-control" content="no-cache" />
+ <title>Contact form to email</title>
+<style>
+		body {
+		margin:0;
+		padding:0;
+		background: #000 url(331.jpg) center center fixed no-repeat;
+		-moz-background-size: cover;
+		background-size: cover;
+	}	
+</style>
+<link rel="shortcut icon" href="arch.ico">
+</head>
+<body>
+<?=$thankYou?>
+<h1>Web PHPMail<h1/>
+<hr/>
+
+<form id="form1" name="form1" method="post" action="phpmail.php">
+<label>發件人</label>
+<br/>
+<input  name="a"><br />
+<label>收件人(錯誤的收件地址可能導致無法收信)</label>
+<br/>
+<input  name="b"><br />
+<br/>
+<label>主旨</label>
+<br/>
+<input  name="c"><br />
+<br/>
+<label>內容</label>
+<br/>
+<textarea rows="5" cols="50" name="message"></textarea>
+<br/>
+  <input type="submit" value="寄出" />
+  <input type="reset" value="清除" />
+  
+  <h5>請勿使用散佈暴力內容、色情內容以及惡意灌信箱</h5>
+  <h5>本server提供者不會負擔任何法律責任</h5>
+</form>
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="cache-control" content="no-cache" />
+ <title>廣告</title>
+<style>
+</style>
+</head>
+<Input Type="Button" Value="重新整理" onClick="window.location.reload();">
+<body onLoad="showImg();">
+	<div id="my_div"></div>
+<script type="text/javascript">
+<!--
+	//宣告圖片陣列
+	var myImg = new Array("slide2.jpg","slide0.jpg","slide1.jpg","yandex.jpg","sogood.jpg","mm.jpg");
+
+	function showImg(){
+	//乘以陣列的長度以取得從0~(陣列長度-1)的數字
+	var imgIndex = Math.floor(Math.random()*myImg.length);
+		document.getElementById("my_div").innerHTML  = "<img src='"+myImg[imgIndex]+"'>";
+	}
+//-->
+</script>
+</body>
+</html>
+<html>
+<head>
