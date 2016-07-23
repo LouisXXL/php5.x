@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="cache-control" content="no-cache" />
+ <title>My Addition Page</title>
+<style>
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="add.php">
+A:<input type="text" name="va"  /><br />
+B:<input type="text" name="vb"  /><br />
+  <input type="submit" value="確定" />
+  <input type="reset" value="清除" />
+  <?php
+$count = intval(file_get_contents("count.txt"));
+ 
+if (!isset($_COOKIE['visitor'])) {
+    $count++;
+    $fp = fopen("count.txt", "w");
+    flock($fp, LOCK_EX);   // do an exclusive lock
+    fwrite($fp, $count);
+    flock($fp, LOCK_UN);   // release the lock
+    fclose($fp);
+    setcookie("visitor", 1, time()+3600);
+}
+echo "累積拜訪人數	" . $count."個人";
+?>
+</form>
+</body>
+</html>
+
